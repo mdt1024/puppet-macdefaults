@@ -3,7 +3,10 @@
 define macdefaults($domain, $key, $value = false, $type = 'string', $action = 'write', $runas = 'root', $currenthost = false) {
 
   if $runas != 'root' {
-    $user = $::current_user
+    $user = $facts['identity']['user']
+  }
+  else {
+    $user = 'root'
   }
 
   if $currenthost {
@@ -29,7 +32,7 @@ define macdefaults($domain, $key, $value = false, $type = 'string', $action = 'w
     }
   }
 
-  case $::operatingsystem {
+  case $facts['os']['name'] {
     'Darwin':{
       case $action {
         'write': {

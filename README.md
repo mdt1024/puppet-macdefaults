@@ -3,6 +3,9 @@ macOS Defaults module for Puppet
 
 This module defines a `macdefaults` type which can manage preferences on macOS/OS X.
 
+This is mdt1024's fork of macdefaults that lives here: 
+git@github.com:mdt1024/puppet-macdefaults.git
+
 The `macdefaults` type enables Puppet to manage any setting that is changed or set using `defaults`.
 
 A `macdefaults` type obviates the need to include a large number of redundant `exec` statements to accomplish the same thing, for example:
